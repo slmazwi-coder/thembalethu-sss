@@ -10,8 +10,8 @@ interface StaffMember {
 }
 
 const staffData: StaffMember[] = [
-  { name: 'Mr. Solomon', position: 'Principal', category: 'Leadership' },
-  { name: 'Staff Member', position: 'Deputy Principal', category: 'Leadership' },
+  { name: 'Ms. N. Magwaza', position: 'Principal', category: 'Leadership' },
+  { name: 'Educator', position: 'Deputy Principal', category: 'Leadership' },
   { name: 'Educator', position: 'Head of Department — Languages', category: 'Departmental Heads', subject: 'Languages' },
   { name: 'Educator', position: 'Head of Department — Sciences', category: 'Departmental Heads', subject: 'Sciences' },
   { name: 'Educator', position: 'Head of Department — Commerce', category: 'Departmental Heads', subject: 'Commerce' },
@@ -31,12 +31,12 @@ const categories = ['Leadership', 'Departmental Heads', 'Class Teachers', 'Suppo
 const StaffCard = ({ member }: { member: StaffMember }) => (
   <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center p-6 text-center border border-[#d6e5ef] hover:-translate-y-1">
     <div className="w-24 h-24 rounded-full bg-blue-50 border-4 border-[#b8d4e8] flex items-center justify-center mb-4 overflow-hidden">
-      <div className="w-full h-full bg-gradient-to-br from-[#C9A84C] to-[#F0D080] flex items-center justify-center text-[#0D2137] font-bold text-2xl font-serif">
-        MC
+      <div className="w-full h-full bg-gradient-to-br from-[#800000] to-[#DC143C] flex items-center justify-center text-white font-bold text-2xl font-serif">
+        TE
       </div>
     </div>
     <h3 className="text-sm font-bold text-school-blue leading-tight">{member.name}</h3>
-    <p className="text-xs font-semibold mt-1" style={{ color: '#C9A84C' }}>{member.position}</p>
+    <p className="text-xs font-semibold mt-1 text-school-blue">{member.position}</p>
     {member.subject && (
       <span className="mt-2 inline-block bg-blue-50 text-school-blue text-xs font-medium px-3 py-1 rounded-full">
         {member.subject}
