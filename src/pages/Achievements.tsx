@@ -4,30 +4,23 @@ import { Trophy, TrendingUp, Award, Star } from 'lucide-react';
 
 const achievements = [
   {
-    year: '2020',
-    title: 'Matric Pass Rate 72.6%',
-    description: 'The Class of 2020 achieved a 72.6% matric pass rate — up from 63.2% the previous year, showing continued improvement in academic results.',
+    year: '2023',
+    title: 'Matric Pass Rate 82%',
+    description: 'The Class of 2023 achieved an 82% matric pass rate — a testament to the dedication of both our staff and learners.',
     icon: Trophy,
     highlight: true,
   },
   {
-    year: '2019',
-    title: 'Matric Pass Rate 63.2%',
-    description: 'The Class of 2019 set the foundation for continued academic growth, with steady improvement year on year.',
-    icon: TrendingUp,
-    highlight: false,
-  },
-  {
     year: 'Ongoing',
-    title: 'Sports & Athletics Excellence',
+    title: 'Sports & Athletics',
     description: 'Our learners participate in football, netball, athletics and volleyball, regularly competing at district and provincial levels.',
     icon: Award,
     highlight: false,
   },
   {
     year: 'Ongoing',
-    title: 'Academic Clubs & Competitions',
-    description: 'From debating to mathematics olympiad preparation, our academic clubs push learners to excel and compete at district and provincial levels.',
+    title: 'Academic Clubs',
+    description: 'From debating to mathematics olympiad preparation, our academic clubs push learners to excel and compete.',
     icon: Star,
     highlight: false,
   },

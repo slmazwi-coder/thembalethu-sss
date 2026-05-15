@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <nav className="glass-nav w-full">
-      <div className="w-full" style={{ background: 'linear-gradient(90deg, #800000 0%, #800000 60%, #5c0000 100%)' }}>
+      <div className="w-full bg-[#800000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3 min-w-0 flex-1">
@@ -38,7 +38,7 @@ export const Navbar = () => {
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-3 shrink-0">
-              <Link to="/student/login" className={cn('px-4 py-2 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-2', location.pathname.startsWith('/student') ? 'text-school-blue bg-white' : 'text-white border border-white hover:bg-white hover:text-school-blue')}>
+              <Link to="/student/login" className={cn('px-4 py-2 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-2', location.pathname.startsWith('/student') ? 'text-[#800000] bg-white' : 'text-white border border-white hover:bg-white hover:text-[#800000]')}>
                 <User size={15} /> Student Portal
               </Link>
             </div>
@@ -50,11 +50,11 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:block bg-gray-50 w-full border-b-2" style={{ borderColor: '#DC143C' }}>
+      <div className="hidden md:block bg-white w-full border-b" style={{ borderColor: '#DC143C' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-x-1 gap-y-0 py-1">
             {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} className={cn('px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-white bg-school-blue font-semibold' : 'text-gray-600 hover:text-school-blue hover:bg-gray-100')}>
+              <Link key={link.path} to={link.path} className={cn('px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-white bg-[#800000] font-semibold' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-100')}>
                 {link.name}
               </Link>
             ))}

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Award, TrendingUp, Users, Megaphone, ArrowRight, BookOpen } from 'lucide-react';
 
 const stats = [
-  { label: 'Matric Pass Rate 2023', value: '82%', icon: TrendingUp },
+  { label: 'Matric Pass Rate', value: '82%', icon: TrendingUp },
   { label: 'Total Learners', value: '1,187', icon: Users },
   { label: 'Educators', value: '29', icon: Award },
 ];
