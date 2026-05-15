@@ -22,39 +22,39 @@ export const Navbar = () => {
 
   return (
     <nav className="glass-nav w-full">
-      <div className="w-full border-b border-gray-100">
+      <div className="w-full" style={{ background: 'linear-gradient(90deg, #800000 0%, #800000 60%, #5c0000 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3 min-w-0 flex-1">
               <img
                 src="/assets/logo/telogo.png"
                 alt="Thembalethu SSS Logo"
-                className="h-11 w-11 shrink-0 rounded-xl border border-[#C9A84C]/30 shadow-md object-contain bg-white"
+                className="h-10 w-10 shrink-0 rounded-lg shadow-md object-contain bg-white p-0.5"
               />
               <div className="min-w-0">
-                <span className="md:hidden text-sm font-bold text-school-blue block leading-tight">Thembalethu SSS</span>
-                <span className="hidden md:block text-base font-bold text-school-blue leading-tight">Thembalethu Senior Secondary School</span>
-                <span className="text-xs font-semibold tracking-wide uppercase" style={{color:'#C9A84C'}}>Progress Begins Here</span>
+                <span className="md:hidden text-sm font-bold text-white block leading-tight">Thembalethu SSS</span>
+                <span className="hidden md:block text-base font-bold text-white leading-tight">Thembalethu Senior Secondary School</span>
+                <span className="text-xs font-semibold tracking-wide uppercase text-white/80">Progress Begins Here</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-3 shrink-0">
-              <Link to="/student/login" className={cn('px-4 py-2 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-2', location.pathname.startsWith('/student') ? 'text-white bg-school-blue' : 'text-school-blue border border-school-blue hover:bg-school-blue hover:text-white')}>
+              <Link to="/student/login" className={cn('px-4 py-2 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-2', location.pathname.startsWith('/student') ? 'text-school-blue bg-white' : 'text-white border border-white hover:bg-white hover:text-school-blue')}>
                 <User size={15} /> Student Portal
               </Link>
             </div>
             <div className="md:hidden flex items-center shrink-0 ml-2">
-              <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 hover:text-school-blue p-2" aria-label="Open menu">
+              <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-white/80 p-2" aria-label="Open menu">
                 {isOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="hidden md:block bg-white w-full">
+      <div className="hidden md:block bg-gray-50 w-full border-b-2" style={{ borderColor: '#DC143C' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-x-1 gap-y-0 py-1">
             {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} className={cn('px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-school-blue bg-blue-50 font-semibold' : 'text-gray-600 hover:text-school-blue hover:bg-gray-50')}>
+              <Link key={link.path} to={link.path} className={cn('px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-white bg-school-blue font-semibold' : 'text-gray-600 hover:text-school-blue hover:bg-gray-100')}>
                 {link.name}
               </Link>
             ))}

@@ -45,7 +45,7 @@ export const Hero = () => {
               onError={() => setFailed((p) => ({ ...p, [currentIndex]: true }))}
             />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-[#0D2137] via-[#1A5276] to-[#2E86AB] opacity-95 flex items-center justify-center">
+            <div className="h-full w-full bg-gradient-to-br from-[#800000] via-[#5c0000] to-[#800000] opacity-95 flex items-center justify-center">
               <div className="text-center text-white/70 px-6">
                 <div className="mx-auto mb-3 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/15">
                   <ImageIcon />
@@ -79,7 +79,7 @@ export const Hero = () => {
           <img
             src="/assets/logo/telogo.png"
             alt="Thembalethu SSS Logo"
-            className="h-24 w-24 mx-auto rounded-full border-4 border-[#C9A84C] shadow-2xl object-contain bg-white"
+            className="h-24 w-24 mx-auto rounded-full border-4 border-[#DC143C] shadow-2xl object-contain bg-white"
           />
         </motion.div>
         <motion.h1
@@ -94,8 +94,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 }}
-          className="text-lg md:text-2xl font-light italic"
-          style={{ color: '#C9A84C' }}
+          className="text-lg md:text-2xl font-light italic text-white"
         >
           "Progress Begins Here"
         </motion.p>
@@ -105,8 +104,8 @@ export const Hero = () => {
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
           className="mt-8 flex gap-4"
         >
-          <a href="/admissions" className="btn-primary bg-white text-school-blue hover:bg-gray-100">Admissions</a>
-          <a href="/about" className="btn-primary border-2 border-white bg-transparent hover:bg-white/10">Learn More</a>
+          <a href="/admissions" className="btn-primary bg-white text-[#800000] hover:bg-gray-100">Admissions</a>
+          <a href="/about" className="btn-primary border-2 border-white bg-transparent hover:bg-white/10 text-white">Learn More</a>
         </motion.div>
       </div>
 
@@ -119,7 +118,7 @@ export const Hero = () => {
 
       <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
         {slides.map((_, i) => (
-          <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#C9A84C] scale-125' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Go to slide ${i + 1}`} />
+          <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#DC143C] scale-125' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Go to slide ${i + 1}`} />
         ))}
       </div>
     </div>
