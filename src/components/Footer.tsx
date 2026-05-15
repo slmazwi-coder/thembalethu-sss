@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
               <img
-                src="/assets/logo/mclogo.png"
+                src="/assets/logo/telogo.png"
                 alt="Thembalethu SSS Logo"
                 className="h-12 w-12 shrink-0 rounded-xl border border-white/20 shadow-lg object-contain bg-white"
               />

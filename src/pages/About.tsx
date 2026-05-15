@@ -39,7 +39,7 @@ export const About = () => {
           >
             {!campusFailed ? (
               <img
-                src="/assets/about/mccamups.png"
+                src="/assets/about/tecampus.png"
                 alt="Thembalethu SSS campus"
                 className="w-full h-full object-cover"
                 onError={() => setCampusFailed(true)}
@@ -76,7 +76,7 @@ export const About = () => {
               <div className="flex flex-col items-center justify-center bg-school-blue p-8 md:p-10">
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 shadow-xl mb-5" style={{ borderColor: '#C9A84C' }}>
                   <div className="w-full h-full flex items-center justify-center bg-[#133d58]">
-                    <img src="/assets/about/principal.jpg" alt="Ms. N. Magwaza" className="w-full h-full object-cover object-top" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                    <img src="/assets/about/teprincipal.png" alt="Ms. N. Magwaza" className="w-full h-full object-cover object-top" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-white text-center leading-tight">Ms. N. Magwaza</h3>

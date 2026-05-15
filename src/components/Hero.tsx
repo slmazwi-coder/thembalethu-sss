@@ -3,11 +3,11 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 
 const slides = [
-  { url: '/assets/hero/mchero1.png', caption: 'Striving for Excellence in All We Do' },
-  { url: '/assets/hero/mchero2.png', caption: 'Quality Education in Kokstad' },
-  { url: '/assets/hero/mchero4.png', caption: 'Dedicated Staff & Community' },
-  { url: '/assets/hero/mchero5.png', caption: 'In the Shadow of Mount Currie' },
-  { url: '/assets/hero/mchero6.png', caption: 'Our Vibrant School Life' },
+  { url: '/assets/hero/tehero1.png', caption: 'Striving for Excellence in All We Do' },
+  { url: '/assets/hero/tehero2.png', caption: 'Quality Education in Kokstad' },
+  { url: '/assets/hero/tehero4.png', caption: 'Dedicated Staff & Community' },
+  { url: '/assets/hero/tehero5.png', caption: 'In the Shadow of Mount Currie' },
+  { url: '/assets/hero/tehero6.png', caption: 'Our Vibrant School Life' },
 ];
 
 export const Hero = () => {
@@ -78,7 +78,7 @@ export const Hero = () => {
           className="mb-4"
         >
           <img
-            src="/assets/logo/mclogo.png"
+            src="/assets/logo/telogo.png"
             alt="Thembalethu SSS Logo"
             className="h-24 w-24 mx-auto rounded-full border-4 border-[#C9A84C] shadow-2xl object-contain bg-white"
           />

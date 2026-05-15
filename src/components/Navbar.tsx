@@ -27,7 +27,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3 min-w-0 flex-1">
               <img
-                src="/assets/logo/mclogo.png"
+                src="/assets/logo/telogo.png"
                 alt="Thembalethu SSS Logo"
                 className="h-11 w-11 shrink-0 rounded-xl border border-[#C9A84C]/30 shadow-md object-contain bg-white"
               />
