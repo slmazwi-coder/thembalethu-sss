@@ -12,48 +12,48 @@ export const Home = () => {
   return (
     <div className="flex flex-col">
       {/* Notices */}
-      <section className="py-10 sm:py-12 bg-white">
+      <section className="py-10 sm:py-12 bg-gray-50">
         <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="rounded-3xl border border-blue-100 bg-blue-50 p-6 sm:p-7 flex gap-4 items-start">
-              <div className="p-3 rounded-2xl bg-white border border-blue-100 text-school-blue shrink-0">
-                <Megaphone size={22} />
+          <h2 className="section-title">Latest Updates</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card flex flex-col h-full">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#800000] text-white">Admissions</span>
               </div>
-              <div className="min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <div className="text-sm font-black uppercase tracking-widest text-school-blue">Notice</div>
-                  <span className="px-2 py-1 rounded-full text-xs font-bold bg-white border border-blue-100 text-gray-700">2026</span>
-                </div>
-                <h3 className="text-xl font-extrabold text-gray-900 mt-2">2026 Admissions applications are open</h3>
-                <p className="text-gray-700 mt-1">Applications for the <span className="font-bold">2026</span> academic year are now open. Grades 8–12.</p>
-                <a href="/admissions" className="mt-4 inline-flex items-center gap-2 text-school-blue font-bold">
-                  Apply now <ArrowRight size={18} />
-                </a>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">2026 Applications Open</h3>
+              <p className="text-gray-600 mb-4 flex-1">Applications for the 2026 academic year are now open. We accept learners from Grade 8 to Grade 12.</p>
+              <a href="/admissions" className="mt-auto inline-flex items-center gap-2 text-[#800000] font-semibold hover:underline">
+                Apply now <ArrowRight size={18} />
+              </a>
             </div>
 
-            <div className="rounded-3xl border border-amber-100 bg-amber-50 p-6 sm:p-7 flex gap-4 items-start">
-              <div className="p-3 rounded-2xl bg-white border border-amber-100 text-school-blue shrink-0">
-                <BookOpen size={22} />
+            <div className="card flex flex-col h-full">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#DC143C] text-white">Academics</span>
               </div>
-              <div className="min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <div className="text-sm font-black uppercase tracking-widest text-school-blue">Academics</div>
-                  <span className="px-2 py-1 rounded-full text-xs font-bold bg-white border border-amber-100 text-gray-700">CAPS</span>
-                </div>
-                <h3 className="text-xl font-extrabold text-gray-900 mt-2">Comprehensive CAPS curriculum</h3>
-                <p className="text-gray-700 mt-1">Full academic programme from Grade 8 to 12 including Commerce, Sciences, and Arts.</p>
-                <a href="/subjects" className="mt-4 inline-flex items-center gap-2 text-school-blue font-bold">
-                  View subjects <ArrowRight size={18} />
-                </a>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">CAPS Curriculum</h3>
+              <p className="text-gray-600 mb-4 flex-1">Full academic programme from Grade 8 to 12 including Commerce, Sciences, and Arts streams.</p>
+              <a href="/subjects" className="mt-auto inline-flex items-center gap-2 text-[#800000] font-semibold hover:underline">
+                View subjects <ArrowRight size={18} />
+              </a>
+            </div>
+
+            <div className="card flex flex-col h-full">
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#5c0000] text-white">Results</span>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">82% Pass Rate</h3>
+              <p className="text-gray-600 mb-4 flex-1">Our learners achieved an 82% matric pass rate — progress begins here.</p>
+              <a href="/achievements" className="mt-auto inline-flex items-center gap-2 text-[#800000] font-semibold hover:underline">
+                See achievements <ArrowRight size={18} />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-gray-50 -mt-4 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-white -mt-4 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat, i) => (
             <motion.div
@@ -62,9 +62,10 @@ export const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.3 }}
-              className="bg-white p-8 rounded-2xl shadow-xl flex items-center gap-6 border-b-4 border-school-blue"
+              className="bg-gray-50 p-8 rounded-2xl shadow-lg flex items-center gap-6 border-b-4"
+              style={{ borderBottomColor: '#800000' }}
             >
-              <div className="p-4 bg-blue-50 rounded-xl text-school-blue">
+              <div className="p-4 bg-[#800000]/10 rounded-xl text-[#800000]">
                 <stat.icon size={32} />
               </div>
               <div>
@@ -84,8 +85,7 @@ export const Home = () => {
             "Progress Begins Here"
           </p>
           <p className="mt-6 text-gray-500 text-lg max-w-2xl mx-auto">
-            A Section 21, Quintile 4 public school in Kokstad, KwaZulu-Natal — 
-            nestled in the shadow of the majestic Mount Currie mountain, preparing learners for the National Senior Certificate from Grade 8 through Grade 12.
+            A Section 21, Quintile 4 public school in Shayamoya, Kokstad, KwaZulu-Natal — preparing learners for the National Senior Certificate from Grade 8 through Grade 12.
           </p>
         </div>
       </section>
