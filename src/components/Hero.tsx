@@ -50,11 +50,17 @@ export const Hero = () => {
 
   return (
     <div className="relative h-[500px] w-full overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={slide.url} alt={slide.title} className="h-full w-full object-cover" />
+        <img
+          src={slide.url}
+          alt={slide.title}
+          className="h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#800000]/90 via-[#800000]/60 to-transparent" />
       </div>
 
+      {/* Content */}
       <div className="relative h-full max-w-6xl mx-auto px-4 flex items-center">
         <motion.div
           key={currentIndex}
@@ -71,6 +77,20 @@ export const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Logo at bottom - Rising Sun style */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+        <div className="relative">
+          {/* Glow effect */}
+          <div className="absolute -inset-4 bg-[#DC143C] rounded-full opacity-30 blur-xl"></div>
+          <img 
+            src="/assets/logo/telogo.png" 
+            alt="Logo" 
+            className="relative w-24 h-24 rounded-full border-4 border-white shadow-2xl bg-white"
+          />
+        </div>
+      </div>
+
+      {/* Navigation */}
       <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition" aria-label="Previous">
         <ChevronLeft size={28} />
       </button>
@@ -78,9 +98,15 @@ export const Hero = () => {
         <ChevronRight size={28} />
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* Dots */}
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, i) => (
-          <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? 'bg-white w-6' : 'bg-white/40'}`} aria-label={`Go to slide ${i + 1}`} />
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? 'bg-white w-6' : 'bg-white/40'}`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
         ))}
       </div>
     </div>
