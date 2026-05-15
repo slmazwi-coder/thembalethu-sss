@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 
 const slides = [
-  { url: '/assets/hero/tehero1.png', caption: 'Progress Begins Here in All We Do' },
+  { url: '/assets/hero/tehero1.png', caption: 'Progress Begins Here' },
   { url: '/assets/hero/tehero2.png', caption: 'Quality Education in Kokstad' },
   { url: '/assets/hero/tehero4.png', caption: 'Dedicated Staff & Community' },
   { url: '/assets/hero/tehero5.png', caption: 'In the Shadow of Mount Currie' },
@@ -98,7 +98,7 @@ export const Hero = () => {
           className="text-lg md:text-2xl font-light italic"
           style={{ color: '#C9A84C' }}
         >
-          "Progress Begins Here in All We Do"
+          "Progress Begins Here"
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

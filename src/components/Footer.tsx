@@ -18,7 +18,7 @@ export const Footer = () => {
               />
               <div>
                 <h3 className="text-base font-bold leading-tight">Thembalethu Senior Secondary School</h3>
-                <p className="text-sm italic mt-0.5" style={{ color: '#C9A84C' }}>"Progress Begins Here in All We Do"</p>
+                <p className="text-sm italic mt-0.5" style={{ color: '#C9A84C' }}>"Progress Begins Here"</p>
               </div>
             </div>
           </div>
