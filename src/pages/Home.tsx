@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar, ArrowRight, Play, Pause, Volume2 } from 'lucide-react';
+import { Calendar, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 const newsItems = [
   {
@@ -25,7 +25,9 @@ const newsItems = [
 
 export const Home = () => {
   const [current, setCurrent] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,6 +35,17 @@ export const Home = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Handle hover play/pause
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isHovered) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isHovered]);
 
   return (
     <div className="flex flex-col">
@@ -68,20 +81,46 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Video Player */}
+      {/* Video Player - Autoplay muted on hover */}
       <section className="py-6 bg-white">
         <div className="max-w-2xl mx-auto px-4">
-          <div className="relative rounded-xl overflow-hidden bg-gray-900 aspect-video flex items-center justify-center cursor-pointer" onClick={() => setIsPlaying(!isPlaying)}>
-            {/* Placeholder for video - replace with actual video URL */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#800000] to-[#5c0000]"></div>
-            <div className="relative text-center text-white">
-              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
-                {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+          <div 
+            className="relative rounded-xl overflow-hidden bg-gray-900 aspect-video cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={() => setIsMuted(!isMuted)}
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              muted={isMuted}
+              loop
+              playsInline
+              poster="/assets/hero/tehero1.png"
+            >
+              <source src="/assets/school-video.mp4" type="video/mp4" />
+            </video>
+            
+            {/* Overlay when not hovering */}
+            {!isHovered && (
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
+                    <Play size={28} className="ml-1" />
+                  </div>
+                  <p className="text-sm font-medium">Hover to play</p>
+                </div>
               </div>
-              <p className="text-sm font-medium">School Video Tour</p>
-            </div>
-            <div className="absolute bottom-3 right-3">
-              <Volume2 size={20} className="text-white/70" />
+            )}
+            
+            {/* Mute indicator */}
+            <div className="absolute bottom-3 right-3 flex items-center gap-2">
+              <button 
+                onClick={(e) => { e.stopPropagation(); setIsMuted(!isMuted); }}
+                className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+              >
+                {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              </button>
             </div>
           </div>
         </div>
