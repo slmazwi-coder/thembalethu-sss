@@ -17,7 +17,7 @@ export const Contact = () => {
                   <MapPin className="shrink-0 mt-0.5 text-school-blue" size={20} />
                   <div>
                     <p className="font-semibold">Physical Address</p>
-                    <p className="text-sm text-gray-500">99 Bhongweni Location, Kokstad</p>
+                    <p className="text-sm text-gray-500">6902 Runnerveld Road, Shayamoya, Kokstad</p>
                     <p className="text-sm text-gray-500">KwaZulu-Natal, South Africa</p>
                   </div>
                 </div>

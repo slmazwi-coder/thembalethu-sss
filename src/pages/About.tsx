@@ -24,7 +24,7 @@ export const About = () => {
               <h2 className="text-2xl font-bold text-school-blue">Our School</h2>
             </div>
             <div className="space-y-4 text-gray-600 leading-relaxed text-base">
-              <p>Thembalethu Senior Secondary School is a public no-fee secondary school located in Bhongweni Township, Kokstad, KwaZulu-Natal. Our school was established in January 2018 to alleviate overcrowding at existing schools in the Kokstad area and serve the growing educational needs of our community.</p>
+              <p>Thembalethu Senior Secondary School is a public no-fee secondary school located in Shayamoya, Kokstad, KwaZulu-Natal. Our school was established in January 2018 to serve the educational needs of our community.</p>
               <p>As a no-fee public school managed by the KwaZulu-Natal Department of Education, we are committed to providing quality education to every learner. We offer the National Senior Certificate (NSC) CAPS curriculum across Grades 8–12, preparing our learners for successful futures.</p>
               <p>Under the leadership of Principal Ms. N. Magwaza, the school serves approximately 1,187 learners with a dedicated team of 29 educators, committed to excellence and the holistic development of every student in the Harry Gwala District.</p>
             </div>
@@ -89,7 +89,7 @@ export const About = () => {
                 <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
                   <p>At Thembalethu Senior Secondary School, we are committed to providing a safe, inclusive and stimulating environment that enables every learner to reach their full potential through quality teaching, strong values and community partnership.</p>
                   <p>We are proud of our learners who achieved an 82% matric pass rate — a testament to the dedication of both our staff and our learners in striving for excellence in all we do. Our school may be new, but our commitment to academic excellence and holistic development is unwavering.</p>
-                  <p>Situated in the heart of Bhongweni Township, we invite families and learners to join us in this journey of growth, learning, and achievement.</p>
+                  <p>Located in the heart of Shayamoya, we invite families and learners to join us in this journey of growth, learning, and achievement.</p>
                 </div>
                 <div className="text-6xl font-serif leading-none mt-2 text-right opacity-40 select-none" style={{ color: '#C9A84C' }}>"</div>
               </div>
@@ -112,7 +112,7 @@ export const About = () => {
             {[
               { label: 'School Type', value: 'Public No-Fee School' },
               { label: 'Grades', value: 'Grade 8 – 12' },
-              { label: 'Location', value: 'Bhongweni, Kokstad' },
+              { label: 'Location', value: 'Shayamoya, Kokstad' },
               { label: 'Established', value: '2018' },
             ].map((fact, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 text-center shadow border border-gray-100 border-b-4" style={{ borderBottomColor: '#1A5276' }}>
