@@ -8,7 +8,6 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Staff } from './pages/Staff';
 import { Subjects } from './pages/Subjects';
-import { Gallery } from './pages/Gallery';
 import { Documents } from './pages/Documents';
 import { Achievements } from './pages/Achievements';
 import { Activities } from './pages/Activities';
@@ -55,7 +54,6 @@ export default function App() {
         <Route path="/about" element={<PageShell><About /></PageShell>} />
         <Route path="/staff" element={<PageShell><Staff /></PageShell>} />
         <Route path="/subjects" element={<PageShell><Subjects /></PageShell>} />
-        <Route path="/gallery" element={<PageShell><Gallery /></PageShell>} />
         <Route path="/documents" element={<PageShell><Documents /></PageShell>} />
         <Route path="/achievements" element={<PageShell><Achievements /></PageShell>} />
         <Route path="/activities" element={<PageShell><Activities /></PageShell>} />
