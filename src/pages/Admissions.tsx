@@ -273,7 +273,7 @@ export const Admissions = () => {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
           <p className="text-gray-600 mb-8">
-            Thank you for applying to Mount Currie Agricultural High School. We have received your application and will be in contact shortly.
+            Thank you for applying to Thembalethu Senior Secondary School. We have received your application and will be in contact shortly.
           </p>
           <a href="/" className="btn-primary w-full inline-block">Back to Home</a>
         </motion.div>
@@ -296,11 +296,11 @@ export const Admissions = () => {
               <div>
                 <h2 className="text-2xl font-bold">Application for Admission to School</h2>
                 <p className="text-white/70 text-sm mt-1">
-                  Mount Currie Agricultural High School &nbsp;·&nbsp; Kokstad, KwaZulu-Natal, Eastern Cape 4730
+                  Thembalethu Senior Secondary School &nbsp;·&nbsp; Shayamoya, Kokstad, KwaZulu-Natal
                 </p>
               </div>
               <div className="text-right text-sm text-white/70">
-                <div>Tel: 039 727 3662</div>
+                <div>Tel: +27 82 611 7032</div>
                 <div>Step {step} of 3</div>
               </div>
             </div>
