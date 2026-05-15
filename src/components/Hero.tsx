@@ -1,17 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
-import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
 const slides = [
-  { url: '/assets/hero/tehero1.png', caption: 'Progress Begins Here' },
-  { url: '/assets/hero/tehero3.png', caption: 'Quality Education in Kokstad' },
-  { url: '/assets/hero/tehero4.png', caption: 'Dedicated Staff & Community' },
-  { url: '/assets/hero/tehero5.png', caption: 'Holistic Learning Environment' },
+  { 
+    url: '/assets/hero/tehero1.png', 
+    title: 'Progress Begins Here',
+    subtitle: 'Thembalethu Senior Secondary School',
+    btn: 'Apply Now',
+    link: '/admissions'
+  },
+  { 
+    url: '/assets/hero/tehero3.png', 
+    title: 'Quality Education',
+    subtitle: 'CAPS Curriculum Grade 8-12',
+    btn: 'View Subjects',
+    link: '/subjects'
+  },
+  { 
+    url: '/assets/hero/tehero4.png', 
+    title: 'Dedicated Staff',
+    subtitle: '29 Educators for 1187 Learners',
+    btn: 'Meet Our Staff',
+    link: '/staff'
+  },
+  { 
+    url: '/assets/hero/tehero5.png', 
+    title: 'Holistic Learning',
+    subtitle: 'Sports, Arts & Academic Excellence',
+    btn: 'Achievements',
+    link: '/achievements'
+  },
 ];
 
 export const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [failed, setFailed] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -24,101 +47,40 @@ export const Hero = () => {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   const slide = slides[currentIndex];
-  const showImage = !!slide.url && !failed[currentIndex];
 
   return (
-    <div className="relative h-[650px] w-full overflow-hidden bg-school-blue">
-      <AnimatePresence mode="wait">
+    <div className="relative h-[500px] w-full overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={slide.url} alt={slide.title} className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#800000]/90 via-[#800000]/60 to-transparent" />
+      </div>
+
+      <div className="relative h-full max-w-6xl mx-auto px-4 flex items-center">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.995 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="absolute inset-0"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-white max-w-xl"
         >
-          {showImage ? (
-            <img
-              src={slide.url}
-              alt={slide.caption}
-              className="h-full w-full object-cover object-center opacity-45"
-              onError={() => setFailed((p) => ({ ...p, [currentIndex]: true }))}
-            />
-          ) : (
-            <div className="h-full w-full bg-gradient-to-br from-[#800000] via-[#5c0000] to-[#800000] opacity-95 flex items-center justify-center">
-              <div className="text-center text-white/70 px-6">
-                <div className="mx-auto mb-3 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/15">
-                  <ImageIcon />
-                </div>
-                <div className="font-semibold">Hero image placeholder</div>
-                <div className="text-sm text-white/60">Add images to <span className="font-mono">public/assets/hero/</span></div>
-              </div>
-            </div>
-          )}
-          <div className="absolute bottom-20 left-0 right-0 text-center z-20">
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              key={`caption-${currentIndex}`}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="text-white/85 text-lg md:text-xl font-medium tracking-wide uppercase"
-            >
-              {slide.caption}
-            </motion.p>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.05 }}
-          className="mb-4"
-        >
-          <img
-            src="/assets/logo/telogo.png"
-            alt="Thembalethu SSS Logo"
-            className="h-24 w-24 mx-auto rounded-full border-4 border-[#DC143C] shadow-2xl object-contain bg-white"
-          />
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold mb-2 uppercase"
-        >
-          Thembalethu SSS
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 }}
-          className="text-lg md:text-2xl font-light italic text-white"
-        >
-          "Progress Begins Here"
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
-          className="mt-8 flex gap-4"
-        >
-          <a href="/admissions" className="btn-primary bg-white text-[#800000] hover:bg-gray-100">Admissions</a>
-          <a href="/about" className="btn-primary border-2 border-white bg-transparent hover:bg-white/10 text-white">Learn More</a>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">{slide.title}</h1>
+          <p className="text-xl md:text-2xl text-white/80 mb-6">{slide.subtitle}</p>
+          <a href={slide.link} className="inline-flex items-center gap-2 bg-white text-[#800000] px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+            {slide.btn} <ArrowRight size={18} />
+          </a>
         </motion.div>
       </div>
 
-      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors" aria-label="Previous slide">
-        <ChevronLeft size={32} />
+      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition" aria-label="Previous">
+        <ChevronLeft size={28} />
       </button>
-      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 text-white hover:bg-black/40 transition-colors" aria-label="Next slide">
-        <ChevronRight size={32} />
+      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition" aria-label="Next">
+        <ChevronRight size={28} />
       </button>
 
-      <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, i) => (
-          <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentIndex ? 'bg-[#DC143C] scale-125' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Go to slide ${i + 1}`} />
+          <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? 'bg-white w-6' : 'bg-white/40'}`} aria-label={`Go to slide ${i + 1}`} />
         ))}
       </div>
     </div>
