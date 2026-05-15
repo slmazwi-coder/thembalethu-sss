@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, Calendar, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar, ArrowRight, Play, Pause } from 'lucide-react';
 
 const slides = [
   { 
@@ -33,42 +33,13 @@ const slides = [
   },
 ];
 
-const newsItems = [
-  {
-    title: '2026 Applications Now Open',
-    date: 'May 2026',
-    summary: 'Applications for the 2026 academic year are now open. We accept learners from Grade 8 to Grade 12.',
-    link: '/admissions'
-  },
-  {
-    title: '82% Matric Pass Rate',
-    date: '2023',
-    summary: 'Our learners achieved an 82% matric pass rate — progress begins here.',
-    link: '/achievements'
-  },
-  {
-    title: 'CAPS Curriculum',
-    date: 'Ongoing',
-    summary: 'Full academic programme from Grade 8 to 12 including Commerce, Sciences, and Arts streams.',
-    link: '/subjects'
-  },
-];
-
 export const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentNews, setCurrentNews] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentNews((prev) => (prev + 1) % newsItems.length);
-    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -80,7 +51,7 @@ export const Hero = () => {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div className="relative h-[420px] w-full overflow-hidden">
+      <div className="relative h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img src={slide.url} alt={slide.title} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#800000]/90 via-[#800000]/60 to-transparent" />
@@ -109,54 +80,22 @@ export const Hero = () => {
           <ChevronRight size={28} />
         </button>
 
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
           {slides.map((_, i) => (
             <button key={i} onClick={() => setCurrentIndex(i)} className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? 'bg-white w-6' : 'bg-white/40'}`} />
           ))}
         </div>
       </div>
 
-      {/* Logo overlapping - cut off from hero */}
-      <div className="relative -mt-12 flex justify-center z-10">
+      {/* Logo overlapping */}
+      <div className="relative -mt-10 flex justify-center z-10">
         <div className="relative">
           <div className="absolute -inset-3 bg-[#DC143C] rounded-full opacity-25 blur-lg"></div>
           <img 
             src="/assets/logo/telogo.png" 
             alt="Logo" 
-            className="relative w-20 h-20 rounded-full border-3 border-white shadow-xl bg-white"
+            className="relative w-18 h-18 rounded-full border-3 border-white shadow-xl bg-white"
           />
-        </div>
-      </div>
-
-      {/* Rotating News Card - directly below logo */}
-      <div className="pt-10 pb-8 bg-gray-50 -mt-4">
-        <div className="max-w-2xl mx-auto px-4">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentNews}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="bg-white rounded-xl p-6 text-center"
-              style={{ border: '2px solid #800000' }}
-            >
-              <div className="flex items-center justify-center gap-2 text-xs font-semibold mb-2" style={{ color: '#800000' }}>
-                <Calendar size={14} />
-                <span>{newsItems[currentNews].date}</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-1">{newsItems[currentNews].title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{newsItems[currentNews].summary}</p>
-              <a href={newsItems[currentNews].link} className="inline-flex items-center gap-1 font-semibold text-sm" style={{ color: '#800000' }}>
-                View All <ArrowRight size={14} />
-              </a>
-            </motion.div>
-          </AnimatePresence>
-          
-          <div className="flex justify-center gap-2 mt-4">
-            {newsItems.map((_, i) => (
-              <button key={i} onClick={() => setCurrentNews(i)} className={`h-1.5 rounded-full transition-all ${i === currentNews ? 'w-5' : 'w-1.5 bg-gray-300'}`} style={{ backgroundColor: i === currentNews ? '#800000' : undefined }} />
-            ))}
-          </div>
         </div>
       </div>
     </div>
