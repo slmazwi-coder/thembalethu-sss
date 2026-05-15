@@ -152,7 +152,7 @@ School details:
 - Location: 4 School Lane, Kokstad, 4700, KwaZulu-Natal
 - Phone: 039 727 3662
 - Email: mcsss@telkomsa.net
-- Motto: "Striving for Excellence in All We Do"
+- Motto: "Progress Begins Here in All We Do"
 - Principal: Mr. Solomon
 - Deputy Principal: Deputy Principal
 - School hours: Monday–Friday 08:00–14:30

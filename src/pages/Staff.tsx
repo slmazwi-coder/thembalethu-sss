@@ -10,7 +10,7 @@ interface StaffMember {
 }
 
 const staffData: StaffMember[] = [
-  { name: 'Ms. N. Magwaza', position: 'Principal', category: 'Leadership' },
+  { name: 'Ms. N. Magwaza', position: 'Principal', category: 'Leadership', image: '/assets/about/teprincipal.png' },
   { name: 'Educator', position: 'Deputy Principal', category: 'Leadership' },
   { name: 'Educator', position: 'Head of Department — Languages', category: 'Departmental Heads', subject: 'Languages' },
   { name: 'Educator', position: 'Head of Department — Sciences', category: 'Departmental Heads', subject: 'Sciences' },
@@ -31,9 +31,13 @@ const categories = ['Leadership', 'Departmental Heads', 'Class Teachers', 'Suppo
 const StaffCard = ({ member }: { member: StaffMember }) => (
   <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center p-6 text-center border border-[#d6e5ef] hover:-translate-y-1">
     <div className="w-24 h-24 rounded-full bg-blue-50 border-4 border-[#b8d4e8] flex items-center justify-center mb-4 overflow-hidden">
-      <div className="w-full h-full bg-gradient-to-br from-[#800000] to-[#DC143C] flex items-center justify-center text-white font-bold text-2xl font-serif">
-        TE
-      </div>
+      {member.image ? (
+        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-[#800000] to-[#DC143C] flex items-center justify-center text-white font-bold text-2xl font-serif">
+          {member.name.split(' ').map(n => n[0]).join('')}
+        </div>
+      )}
     </div>
     <h3 className="text-sm font-bold text-school-blue leading-tight">{member.name}</h3>
     <p className="text-xs font-semibold mt-1 text-school-blue">{member.position}</p>

@@ -34,7 +34,7 @@ export const Navbar = () => {
               <div className="min-w-0">
                 <span className="md:hidden text-sm font-bold text-school-blue block leading-tight">Thembalethu SSS</span>
                 <span className="hidden md:block text-base font-bold text-school-blue leading-tight">Thembalethu Senior Secondary School</span>
-                <span className="text-xs font-semibold tracking-wide uppercase" style={{color:'#C9A84C'}}>Striving for Excellence</span>
+                <span className="text-xs font-semibold tracking-wide uppercase" style={{color:'#C9A84C'}}>Progress Begins Here</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-3 shrink-0">
