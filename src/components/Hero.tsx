@@ -4,10 +4,9 @@ import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 
 const slides = [
   { url: '/assets/hero/tehero1.png', caption: 'Progress Begins Here' },
-  { url: '/assets/hero/tehero2.png', caption: 'Quality Education in Kokstad' },
+  { url: '/assets/hero/tehero3.png', caption: 'Quality Education in Kokstad' },
   { url: '/assets/hero/tehero4.png', caption: 'Dedicated Staff & Community' },
-  { url: '/assets/hero/tehero5.png', caption: 'In the Shadow of Mount Currie' },
-  { url: '/assets/hero/tehero6.png', caption: 'Our Vibrant School Life' },
+  { url: '/assets/hero/tehero5.png', caption: 'Holistic Learning Environment' },
 ];
 
 export const Hero = () => {
