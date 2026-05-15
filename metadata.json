@@ -1,0 +1,7 @@
+{
+  "name": "Thembalethu Senior Secondary School",
+  "description": "Thembalethu SSS is a public no-fee secondary school located in Bhongweni Township, Kokstad, KwaZulu-Natal.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
