@@ -1,6 +1,6 @@
 {
-  "name": "Thembalethu Senior Secondary School",
-  "description": "Thembalethu SSS is a public no-fee secondary school located in Bhongweni Township, Kokstad, KwaZulu-Natal.",
+  "name": "Mzamba Comprehensive High School",
+  "description": "Mzamba CHS is a public, no-fee Quintile 2 comprehensive school in Esikhumbeni A/A, Mzamba Location, Bizana, Mbizana, Alfred Nzo East District, Eastern Cape.",
   "requestFramePermissions": [
     "geolocation"
   ]

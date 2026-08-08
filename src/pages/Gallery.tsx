@@ -3,21 +3,17 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
-  { src: '/assets/gallery/gallery1.jpg', caption: 'School assembly — our thriving community', category: 'School Life' },
-  { src: '/assets/gallery/gallery2.jpg', caption: 'Football match day', category: 'Sport' },
-  { src: '/assets/gallery/gallery3.jpg', caption: 'Mount Currie mountain view from school', category: 'Campus' },
-  { src: '/assets/gallery/gallery4.jpg', caption: 'Science class practical', category: 'Academics' },
-  { src: '/assets/gallery/gallery5.jpg', caption: 'Staff in formal attire', category: 'Staff' },
-  { src: '/assets/gallery/gallery6.jpg', caption: 'Grade 12 learners studying', category: 'Academics' },
-  { src: '/assets/gallery/gallery7.jpg', caption: 'Athletics track and field day', category: 'Sport' },
-  { src: '/assets/gallery/gallery8.jpg', caption: 'School grounds and buildings', category: 'Campus' },
-  { src: '/assets/gallery/gallery9.jpg', caption: 'Debating competition', category: 'Activities' },
-  { src: '/assets/gallery/gallery10.jpg', caption: 'Netball team in action', category: 'Sport' },
-  { src: '/assets/gallery/gallery11.jpg', caption: 'Cultural day celebrations', category: 'School Life' },
-  { src: '/assets/gallery/gallery12.jpg', caption: 'Matric farewell', category: 'School Life' },
+  { src: '/assets/hero/hero1.jpg', caption: 'Academic awards and certificates', category: 'Awards' },
+  { src: '/assets/hero/hero2.jpg', caption: 'Proud Mzamba CHS learners', category: 'School Life' },
+  { src: '/assets/hero/hero3.jpg', caption: 'Academic achievement celebration', category: 'Awards' },
+  { src: '/assets/hero/hero4.jpg', caption: 'Certificate of excellence', category: 'Awards' },
+  { src: '/assets/about/campus.jpg', caption: 'Staff and learners celebration', category: 'School Life' },
+  { src: '/assets/gallery/gallery1.jpg', caption: 'Sports and cultural event', category: 'Sports & Culture' },
+  { src: '/assets/gallery/gallery2.jpg', caption: 'Mzamba CHS learners', category: 'School Life' },
+  { src: '/assets/gallery/gallery3.jpg', caption: 'School group and admissions poster', category: 'School Life' },
 ];
 
-const categories = ['All', 'School Life', 'Sport', 'Academics', 'Campus', 'Staff', 'Activities'];
+const categories = ['All', 'School Life', 'Awards', 'Sports & Culture'];
 
 export const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -36,7 +32,7 @@ export const Gallery = () => {
 
         <h1 className="section-title">Gallery</h1>
         <p className="text-center text-gray-500 max-w-xl mx-auto mb-10 -mt-4">
-          A glimpse into life at Thembalethu SSS — from the classroom to the sports field, from assembly to the mountain backdrop.
+          A glimpse into life at Mzamba CHS — from academic celebrations and awards to sports, culture and everyday school pride.
         </p>
 
         <div className="flex flex-wrap gap-2 justify-center mb-8">

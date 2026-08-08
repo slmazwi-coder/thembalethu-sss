@@ -22,23 +22,23 @@ export const Navbar = () => {
   return (
     <nav className="glass-nav w-full">
       {/* Header - maroon */}
-      <div className="w-full bg-[#800000]">
+      <div className="w-full bg-[#1B2A4A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3 min-w-0 flex-1">
               <img
-                src="/assets/logo/telogo.png"
-                alt="Thembalethu SSS Logo"
+                src="/assets/logo/logo.png"
+                alt="Mzamba CHS Logo"
                 className="h-12 w-12 shrink-0 rounded-lg shadow-md object-contain bg-white/10"
               />
               <div className="min-w-0">
-                <span className="md:hidden text-sm font-bold text-white block leading-tight">Thembalethu SSS</span>
-                <span className="hidden md:block text-base font-bold text-white leading-tight">Thembalethu Senior Secondary School</span>
-                <span className="text-xs font-semibold tracking-wide uppercase text-white/70">Progress Begins Here</span>
+                <span className="md:hidden text-sm font-bold text-white block leading-tight">Mzamba CHS</span>
+                <span className="hidden md:block text-base font-bold text-white leading-tight">Mzamba Comprehensive High School</span>
+                <span className="text-xs font-semibold tracking-wide uppercase text-white/70">Strive for success</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-3 shrink-0">
-              <Link to="/student/login" className="px-4 py-2 rounded-lg text-sm font-bold text-white border border-white/50 hover:bg-white hover:text-[#800000] transition">
+              <Link to="/student/login" className="px-4 py-2 rounded-lg text-sm font-bold text-white border border-white/50 hover:bg-white hover:text-[#1B2A4A] transition">
                 <User size={15} className="inline mr-1" /> Student Portal
               </Link>
             </div>
@@ -55,7 +55,7 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-x-1 gap-y-0 py-1">
             {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} className={cn('px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-white bg-[#800000] font-semibold' : 'text-gray-600 hover:text-[#800000] hover:bg-gray-100')}>
+              <Link key={link.path} to={link.path} className={cn('px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap', location.pathname === link.path ? 'text-white bg-[#1B2A4A] font-semibold' : 'text-gray-600 hover:text-[#1B2A4A] hover:bg-gray-100')}>
                 {link.name}
               </Link>
             ))}
@@ -67,7 +67,7 @@ export const Navbar = () => {
         <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-4 py-2">
             {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className={cn('block py-3 text-base font-medium border-b border-gray-50', location.pathname === link.path ? 'text-[#800000] font-semibold' : 'text-gray-600')}>
+              <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)} className={cn('block py-3 text-base font-medium border-b border-gray-50', location.pathname === link.path ? 'text-[#1B2A4A] font-semibold' : 'text-gray-600')}>
                 {link.name}
               </Link>
             ))}

@@ -10,7 +10,7 @@ interface StaffMember {
 }
 
 const staffData: StaffMember[] = [
-  { name: 'Ms. N. Magwaza', position: 'Principal', category: 'Leadership', image: '/assets/about/teprincipal.png' },
+  { name: 'Y.H. Magidela', position: 'Principal', category: 'Leadership' },
   { name: 'Educator', position: 'Deputy Principal', category: 'Leadership' },
   { name: 'Educator', position: 'Head of Department — Languages', category: 'Departmental Heads', subject: 'Languages' },
   { name: 'Educator', position: 'Head of Department — Sciences', category: 'Departmental Heads', subject: 'Sciences' },
@@ -34,7 +34,7 @@ const StaffCard = ({ member }: { member: StaffMember }) => (
       {member.image ? (
         <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
       ) : (
-        <div className="w-full h-full bg-gradient-to-br from-[#800000] to-[#DC143C] flex items-center justify-center text-white font-bold text-2xl font-serif">
+        <div className="w-full h-full bg-gradient-to-br from-[#1B2A4A] to-[#7B1B2B] flex items-center justify-center text-white font-bold text-2xl font-serif">
           {member.name.split(' ').map(n => n[0]).join('')}
         </div>
       )}
@@ -58,7 +58,7 @@ export const Staff = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold tracking-tight mb-3 text-school-blue">Our Staff</h1>
-          <p className="text-gray-500 max-w-xl mx-auto">Meet the dedicated educators and support staff who make Thembalethu SSS thrive every day.</p>
+          <p className="text-gray-500 max-w-xl mx-auto">Meet the dedicated educators and support staff who make Mzamba CHS thrive every day.</p>
           <p className="text-sm text-gray-400 mt-2 italic">Staff details will be updated by school administration.</p>
         </div>
 
@@ -77,7 +77,7 @@ export const Staff = () => {
 
         {/* Staff group photo */}
         <div className="mb-10 rounded-2xl overflow-hidden shadow-lg max-h-72 relative">
-          <img src="/assets/staff/staff_group.png" alt="Thembalethu SSS staff" className="w-full object-cover object-top" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+          <img src="/assets/gallery/gallery1.jpg" alt="Mzamba CHS staff" className="w-full object-cover object-top" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
           <div className="absolute inset-0 bg-gradient-to-t from-school-blue/60 to-transparent flex items-end p-6">
             <p className="text-white font-bold text-lg">Our dedicated team of educators</p>
           </div>

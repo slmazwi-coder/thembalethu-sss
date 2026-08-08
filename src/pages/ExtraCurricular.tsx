@@ -62,7 +62,7 @@ export const ExtraCurricular = () => {
         <h1 className="section-title text-center">Sports & Culture</h1>
 
         <p className="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
-          At Thembalethu SSS, we believe in a holistic education. Our extra-curricular programs are designed to discover and nurture the diverse talents of our learners.
+          At Mzamba CHS, we believe in a holistic education. Our extra-curricular programs are designed to discover and nurture the diverse talents of our learners.
         </p>
 
         {/* Sports */}
@@ -107,7 +107,7 @@ export const ExtraCurricular = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {accolades.map((a, i) => (
               <div key={i} className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ background: '#C9A84C' }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ background: '#D4AF37' }}>
                   <Trophy size={18} className="text-white" />
                 </div>
                 <div>

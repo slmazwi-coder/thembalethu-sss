@@ -40,7 +40,7 @@ export const Activities = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="section-title text-center">Activities</h1>
         <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-          Academic activities help learners grow confidence, strengthen problem-solving skills, and prepare for competitions at Thembalethu SSS.
+          Academic activities help learners grow confidence, strengthen problem-solving skills, and prepare for competitions at Mzamba CHS.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

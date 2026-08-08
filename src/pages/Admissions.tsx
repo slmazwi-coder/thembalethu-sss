@@ -107,7 +107,7 @@ export const Admissions = () => {
   const [learner, setL] = useState({
     surname: '', firstName: '', initials: '', otherNames: '',
     dob: '', gender: '', identificationNumber: '', citizenship: '', race: '',
-    grade: '', year: '2026',
+    grade: '', year: '2027',
     highestGradePassed: '', yearWhenGradeWasPassed: '', accessionNo: '',
     countryOfResidence: '', province: '', physicalAddress: '', citySuburb: '', postalCode: '',
     homeLanguage: '', preferredLanguageOfInstruction: '',
@@ -273,7 +273,7 @@ export const Admissions = () => {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
           <p className="text-gray-600 mb-8">
-            Thank you for applying to Thembalethu Senior Secondary School. We have received your application and will be in contact shortly.
+            Thank you for applying to Mzamba Comprehensive High School. We have received your application and will be in contact shortly.
           </p>
           <a href="/" className="btn-primary w-full inline-block">Back to Home</a>
         </motion.div>
@@ -296,11 +296,11 @@ export const Admissions = () => {
               <div>
                 <h2 className="text-2xl font-bold">Application for Admission to School</h2>
                 <p className="text-white/70 text-sm mt-1">
-                  Thembalethu Senior Secondary School &nbsp;·&nbsp; Shayamoya, Kokstad, KwaZulu-Natal
+                  Mzamba Comprehensive High School &nbsp;·&nbsp; Esikhumbeni A/A, Mzamba Location, Bizana, Eastern Cape
                 </p>
               </div>
               <div className="text-right text-sm text-white/70">
-                <div>Tel: +27 82 611 7032</div>
+                <div>Tel: 039 251 3715</div>
                 <div>Step {step} of 3</div>
               </div>
             </div>
@@ -350,7 +350,7 @@ export const Admissions = () => {
 
                         <Field label="Year">
                           <select className={sel} value={learner.year} onChange={e => patchL('year', e.target.value)}>
-                            {['2025','2026','2026','2028'].map(y => <option key={y}>{y}</option>)}
+                            {['2025','2026','2027','2028'].map(y => <option key={y}>{y}</option>)}
                           </select>
                         </Field>
 
@@ -426,7 +426,7 @@ export const Admissions = () => {
                         <Field label="Province (if SA)">
                           <select className={sel} value={learner.province} onChange={e => patchL('province', e.target.value)}>
                             <option value="">Select</option>
-                            {['Eastern Cape','Free State','Gauteng','KwaZulu-Natal','Limpopo','Mpumalanga','Northern Cape','North West','Western Cape'].map(p => <option key={p}>{p}</option>)}
+                            {['Eastern Cape','Free State','Gauteng','Eastern Cape','Limpopo','Mpumalanga','Northern Cape','North West','Western Cape'].map(p => <option key={p}>{p}</option>)}
                           </select>
                         </Field>
 

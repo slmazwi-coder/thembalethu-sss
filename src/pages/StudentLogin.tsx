@@ -51,7 +51,7 @@ export const StudentLogin = () => {
             <Lock className="text-white" size={28} />
           </div>
           <h1 className="text-2xl font-bold text-white">Student Portal</h1>
-          <p className="text-gray-400 text-sm mt-1">Thembalethu SSS</p>
+          <p className="text-gray-400 text-sm mt-1">Mzamba CHS</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -97,7 +97,7 @@ export const StudentLogin = () => {
 
           <button
             type="submit"
-            className="w-full bg-school-blue text-white py-3 rounded-xl font-bold hover:bg-[#133d58] transition-colors"
+            className="w-full bg-school-blue text-white py-3 rounded-xl font-bold hover:bg-[#0F172A] transition-colors"
           >
             Sign In
           </button>

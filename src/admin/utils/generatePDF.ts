@@ -76,7 +76,7 @@ export function generateApplicationPDF(app: Application): void {
   doc.rect(0, 280, 210, 17, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(9);
-  doc.text('"[SCHOOL MOTTO]"', 105, 290, { align: 'center' });
+  doc.text('"Strive for success"', 105, 290, { align: 'center' });
 
   doc.save(`application_${app.firstName}_${app.lastName}.pdf`);
 }

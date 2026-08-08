@@ -1,57 +1,57 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, Calculator, Globe, Languages, FlaskConical, Briefcase, Palette } from 'lucide-react';
+import { BookOpen, Calculator, Globe, Languages, FlaskConical, Briefcase, Palette, Sprout } from 'lucide-react';
 
 const subjects = [
   {
-    category: 'Mathematics & Science',
-    color: 'bg-blue-50 border-blue-200',
-    iconColor: 'text-school-blue',
-    items: [
-      { name: 'Mathematics', icon: Calculator, description: 'Mathematical reasoning, algebra, geometry, trigonometry and calculus for the National Senior Certificate.' },
-      { name: 'Mathematical Literacy', icon: Calculator, description: 'Practical mathematical skills applied to everyday life situations and real-world problem solving.' },
-      { name: 'Physical Sciences', icon: FlaskConical, description: 'The study of physics and chemistry — mechanics, electricity, chemical reactions and material science.' },
-      { name: 'Life Sciences', icon: FlaskConical, description: 'Biology, ecology, human physiology and environmental studies preparing learners for health and science careers.' },
-    ]
-  },
-  {
-    category: 'Languages',
+    category: 'Languages & Communication',
     color: 'bg-amber-50 border-amber-200',
     iconColor: 'text-amber-700',
     items: [
-      { name: 'English Home Language', icon: Languages, description: 'Advanced English language and literature — reading, writing, communication and literary analysis.' },
-      { name: 'English First Additional Language', icon: Languages, description: 'English as a first additional language for learners with a different home language.' },
-      { name: 'isiZulu', icon: Languages, description: 'Mother tongue language development, literature, and oral communication in isiZulu.' },
-      { name: 'Afrikaans', icon: Languages, description: 'Afrikaans language and literature — reading comprehension, writing and communication skills.' },
+      { name: 'isiXhosa Home Language', icon: Languages, description: 'Mother tongue development in reading, writing, oral communication and literature.' },
+      { name: 'English First Additional Language', icon: Languages, description: 'English as a first additional language, building communication, comprehension and writing skills.' },
+      { name: 'English Home Language', icon: Languages, description: 'Advanced English language and literature for learners with English as a home language.' },
     ]
   },
   {
-    category: 'Social Sciences & Commerce',
+    category: 'Mathematics & Sciences',
+    color: 'bg-blue-50 border-blue-200',
+    iconColor: 'text-school-blue',
+    items: [
+      { name: 'Mathematics', icon: Calculator, description: 'Mathematical reasoning, algebra, geometry, trigonometry and introductory calculus.' },
+      { name: 'Mathematical Literacy', icon: Calculator, description: 'Practical mathematics applied to everyday life, finance and real-world problem solving.' },
+      { name: 'Physical Sciences', icon: FlaskConical, description: 'Physics and chemistry — mechanics, electricity, chemical reactions and material science.' },
+      { name: 'Life Sciences', icon: FlaskConical, description: 'Biology, ecology, human physiology and environmental studies.' },
+      { name: 'Agricultural Sciences', icon: Sprout, description: 'Crop, animal and agricultural management studies linked to sustainable farming and food security.' },
+    ]
+  },
+  {
+    category: 'Social & Commercial Sciences',
     color: 'bg-green-50 border-green-200',
     iconColor: 'text-green-700',
     items: [
-      { name: 'History', icon: Globe, description: 'South African and world history — understanding the past to shape the future.' },
-      { name: 'Geography', icon: Globe, description: 'Physical and human geography — climate, landforms, population and environmental management.' },
+      { name: 'History', icon: Globe, description: 'South African and world history — understanding the past to shape informed citizens.' },
+      { name: 'Geography', icon: Globe, description: 'Physical and human geography, climate, landforms, population and environmental management.' },
       { name: 'Accounting', icon: Briefcase, description: 'Financial record keeping, reporting and analysis for business and personal finance.' },
-      { name: 'Business Studies', icon: Briefcase, description: 'Understanding business environments, management and entrepreneurship.' },
-      { name: 'Economics', icon: Briefcase, description: 'Micro and macroeconomics — market systems, fiscal policy and economic development.' },
-      { name: 'Life Orientation', icon: BookOpen, description: 'Personal development, citizenship, physical education and career guidance (compulsory for all grades).' },
+      { name: 'Business Studies', icon: Briefcase, description: 'Business environments, management, entrepreneurship and enterprise development.' },
+      { name: 'Economics', icon: Briefcase, description: 'Micro and macroeconomics, market systems, fiscal policy and economic development.' },
     ]
   },
   {
-    category: 'Arts & Technology',
+    category: 'Creative & Life Skills',
     color: 'bg-purple-50 border-purple-200',
     iconColor: 'text-purple-700',
     items: [
-      { name: 'Visual Arts', icon: Palette, description: 'Drawing, painting, sculpture and art history — developing creative expression and visual literacy.' },
-      { name: 'Dramatic Arts', icon: Palette, description: 'Drama, performance and theatre studies — building confidence and artistic expression.' },
-      { name: 'Engineering Graphics & Design', icon: Palette, description: 'Technical drawing, CAD and design principles for engineering and architecture pathways.' },
+      { name: 'Life Orientation', icon: BookOpen, description: 'Personal development, citizenship, physical education and career guidance (compulsory).' },
+      { name: 'Creative Arts', icon: Palette, description: 'Visual and performing arts, developing creativity, expression and cultural awareness.' },
+      { name: 'Technology', icon: Palette, description: 'Design, systems and technology skills for the modern world.' },
+      { name: 'Economic & Management Sciences', icon: Briefcase, description: 'Introduction to entrepreneurship, the economy and financial literacy in the GET phase.' },
     ]
   }
 ];
 
 export const Subjects = () => {
-  const [activeCategory, setActiveCategory] = useState('Mathematics & Science');
+  const [activeCategory, setActiveCategory] = useState('Mathematics & Sciences');
   const current = subjects.find(s => s.category === activeCategory)!;
 
   return (
@@ -60,7 +60,7 @@ export const Subjects = () => {
 
         <h1 className="section-title">Subjects & Curriculum</h1>
         <p className="text-center text-gray-500 max-w-2xl mx-auto mb-10 -mt-4">
-          We offer a comprehensive CAPS curriculum from Grade 8 to Grade 12, covering all core and elective subjects required for the National Senior Certificate.
+          We offer a comprehensive CAPS curriculum from Grade 8 to Grade 12, including academic, commercial and agricultural streams for the National Senior Certificate.
         </p>
 
         {/* Category tabs */}
@@ -95,11 +95,11 @@ export const Subjects = () => {
           ))}
         </div>
 
-        {/* Pass rate */}
-        <div className="mt-12 bg-gradient-to-r from-school-blue to-[#2E86AB] rounded-3xl p-8 text-center text-white">
-          <p className="text-white/70 uppercase tracking-widest text-sm font-bold mb-2">NSC Matric Pass Rate</p>
-          <p className="text-5xl font-bold mb-1" style={{ color: '#C9A84C' }}>72.6%</p>
-          <p className="text-white/70">Class of 2020 &middot; Up from 63.2% in 2019</p>
+        {/* Mission banner */}
+        <div className="mt-12 bg-gradient-to-r from-school-blue to-[#7B1B2B] rounded-3xl p-8 text-center text-white">
+          <p className="text-white/70 uppercase tracking-widest text-sm font-bold mb-2">Our Commitment</p>
+          <p className="text-2xl font-bold mb-2">Excellence in Education</p>
+          <p className="text-white/80">Preparing learners for tertiary study, skills development and meaningful careers through quality teaching and holistic support.</p>
         </div>
       </div>
     </div>

@@ -282,10 +282,10 @@ export function calculateAverageMark(subjectMarks: SubjectMark[]): number {
 const defaultNews: NewsItem[] = [
   {
     id: '1',
-    title: '2026 Admissions Open',
+    title: '2027 Admissions Open',
     date: 'Now open',
     content:
-      'Applications for the 2026 academic year at Mount Currie SSS are now open. Grades 8–12. Apply online or contact the school office.',
+      'Applications for the 2027 academic year at Mzamba CHS are now open. Grades 8–10. Apply online or contact the school office.',
     image: '',
   },
 ];
@@ -302,11 +302,11 @@ export const setApplications = (items: Application[]) => setItems('admin_applica
 
 // Contact
 const defaultContact: ContactInfo = {
-  address: '4 School Lane, Kokstad, 4700, KwaZulu-Natal',
-  phone: '039 727 3662',
-  email: 'mcsss@telkomsa.net',
-  monThu: '08:00 - 14:30',
-  friday: '08:00 - 14:30',
+  address: 'Esikhumbeni A/A, Mzamba Location, Bizana, 4800, Eastern Cape',
+  phone: '039 251 3715',
+  email: '200500824@ecschools.org.za',
+  monThu: '07:45 - 15:00',
+  friday: '07:45 - 13:00',
   weekend: 'Closed',
 };
 export const getContact = () => getObject<ContactInfo>('admin_contact', defaultContact);
@@ -315,15 +315,15 @@ export const setContact = (info: ContactInfo) => setObject('admin_contact', info
 // About
 const defaultAbout: AboutInfo = {
   historyParagraphs: [
-    'Mount Currie Senior Secondary School is a Section 21, Quintile 4 public school in Kokstad, KwaZulu-Natal.',
-    'Named after the majestic Mount Currie mountain, the school serves 921 learners with 33 dedicated educators across Grades 8–12.',
+    'Mzamba Comprehensive High School is a public no-fee Quintile 2 school in Esikhumbeni A/A, Mzamba Location, Bizana, Eastern Cape.',
+    'The school serves about 1,506 learners with 37 educators across Grades 8–12, offering the National Senior Certificate CAPS curriculum with academic, commercial and agricultural streams.',
     'Parents and guardians are encouraged to engage with the school through meetings, events, and ongoing learner support.',
   ],
-  principalName: 'Mr. Solomon',
+  principalName: 'Mrs Y.H. Magidela',
   principalTitle: 'Principal',
   principalMessage: [
-    'Welcome to Mount Currie Senior Secondary School. We are committed to providing a safe, inclusive and stimulating environment that enables every learner to reach their full potential.',
-    'We value respect, integrity and ubuntu. Together we are striving for excellence in all we do.',
+    'Welcome to Mzamba Comprehensive High School. We are committed to providing a safe, inclusive and stimulating environment that enables every learner to reach their full potential.',
+    'We value respect, integrity and ubuntu. Our motto — "Strive for success" — guides everything we do.',
   ],
 };
 export const getAbout = () => getObject<AboutInfo>('admin_about', defaultAbout);
@@ -356,29 +356,7 @@ export const getHallOfFame = () =>
 export const setHallOfFame = (items: HallOfFameEntry[]) => setItems('admin_hall_of_fame', items);
 
 // Results by year
-const defaultResults: Record<string, YearResults> = {
-  '2020': {
-    overall: 72.6,
-    bachelor: 0,
-    bachelorRate: 0,
-    distinctions: 0,
-    wrote: 0,
-    subjects: [
-      { subject: 'Life Orientation', rate: 95 },
-      { subject: 'English', rate: 80 },
-    ],
-  },
-  '2019': {
-    overall: 63.2,
-    bachelor: 0,
-    bachelorRate: 0,
-    distinctions: 0,
-    wrote: 0,
-    subjects: [
-      { subject: 'Life Orientation', rate: 90 },
-    ],
-  },
-};
+const defaultResults: Record<string, YearResults> = {};
 export const getResultsByYear = (year: string) =>
   getObject<YearResults | null>(`admin_results_${year}`, defaultResults[year] || null);
 export const setResultsByYear = (year: string, data: YearResults) => setObject(`admin_results_${year}`, data);
